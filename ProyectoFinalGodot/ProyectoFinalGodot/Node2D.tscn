@@ -4,7 +4,7 @@
 [ext_resource path="res://sprites/hero.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 36.0
+radius = 16.0
 height = 0.0
 
 [sub_resource type="Animation" id=3]
@@ -119,21 +119,24 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
 [sub_resource type="AnimationNodeStateMachine" id=19]
 states/hero_attack/node = SubResource( 7 )
-states/hero_attack/position = Vector2( 409, 266 )
+states/hero_attack/position = Vector2( 408, 266 )
 states/hero_dead/node = SubResource( 8 )
 states/hero_dead/position = Vector2( 634, 444 )
 states/hero_idle/node = SubResource( 9 )
 states/hero_idle/position = Vector2( 634, 355 )
 states/hero_move/node = SubResource( 10 )
-states/hero_move/position = Vector2( 820, 307 )
+states/hero_move/position = Vector2( 818, 309 )
 states/hero_special_attack/node = SubResource( 11 )
-states/hero_special_attack/position = Vector2( 634, 221 )
+states/hero_special_attack/position = Vector2( 634, 222 )
 transitions = [ "hero_idle", "hero_attack", SubResource( 12 ), "hero_attack", "hero_idle", SubResource( 13 ), "hero_idle", "hero_special_attack", SubResource( 14 ), "hero_special_attack", "hero_idle", SubResource( 15 ), "hero_idle", "hero_move", SubResource( 16 ), "hero_move", "hero_idle", SubResource( 17 ), "hero_idle", "hero_dead", SubResource( 18 ) ]
+start_node = "hero_idle"
+graph_offset = Vector2( 335.5, 189.449 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
@@ -148,10 +151,10 @@ position = Vector2( 216, 135 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 6
-frame = 46
+frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 107, 115 )
+position = Vector2( 224, 143 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
