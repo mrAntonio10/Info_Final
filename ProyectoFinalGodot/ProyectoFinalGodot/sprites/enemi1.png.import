@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PC Computer - Shovel Knight Treasure Trove - Black Knight Bodyswap.png-216c16f13527afc09468ea4590e0e6d6.stex"
+path="res://.import/enemi1.png-c5be91f4ee5f972c11dd04d2e61ef480.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/knigth/PC Computer - Shovel Knight Treasure Trove - Black Knight Bodyswap.png"
-dest_files=[ "res://.import/PC Computer - Shovel Knight Treasure Trove - Black Knight Bodyswap.png-216c16f13527afc09468ea4590e0e6d6.stex" ]
+source_file="res://sprites/enemi1.png"
+dest_files=[ "res://.import/enemi1.png-c5be91f4ee5f972c11dd04d2e61ef480.stex" ]
 
 [params]
 

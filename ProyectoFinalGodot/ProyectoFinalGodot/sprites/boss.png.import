@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walkerMalazo.png-73d8ec189b8347c31465ab53b4468145.stex"
+path="res://.import/boss.png-8e0f7b753b6876320f88ddc863616c73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/knigth/walkerMalazo.png"
-dest_files=[ "res://.import/walkerMalazo.png-73d8ec189b8347c31465ab53b4468145.stex" ]
+source_file="res://sprites/boss.png"
+dest_files=[ "res://.import/boss.png-8e0f7b753b6876320f88ddc863616c73.stex" ]
 
 [params]
 

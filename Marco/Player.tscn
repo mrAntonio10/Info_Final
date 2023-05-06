@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/knigth/WhatsApp Image 2023-05-05 at 07.50.21.jpeg" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -12,6 +12,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
