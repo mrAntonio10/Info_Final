@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/boss.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "boss_aro"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23, 24, 25 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "boss_ataque_aereo"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33, 34 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "boss_ataque_distancia"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "boss_aterrizar"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 37, 38, 39 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "boss_bola"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "boss_correr"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 26, 27, 28, 29 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "boss_despegar"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 50, 51, 52, 53, 54, 55, 56, 57, 58 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "boss_mantenerse_volando"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 53, 54, 55, 56, 57, 58 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "boss_morir"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43, 44, 45 ]
+}
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 1 )
+hframes = 10
+vframes = 6
+frame = 57
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/boss_aro = SubResource( 1 )
+anims/boss_ataque_aereo = SubResource( 2 )
+anims/boss_ataque_distancia = SubResource( 3 )
+anims/boss_aterrizar = SubResource( 4 )
+anims/boss_bola = SubResource( 5 )
+anims/boss_correr = SubResource( 6 )
+anims/boss_despegar = SubResource( 7 )
+anims/boss_mantenerse_volando = SubResource( 8 )
+anims/boss_morir = SubResource( 9 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]

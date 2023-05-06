@@ -134,6 +134,8 @@ states/hero_move/position = Vector2( 820, 307 )
 states/hero_special_attack/node = SubResource( 11 )
 states/hero_special_attack/position = Vector2( 634, 221 )
 transitions = [ "hero_idle", "hero_attack", SubResource( 12 ), "hero_attack", "hero_idle", SubResource( 13 ), "hero_idle", "hero_special_attack", SubResource( 14 ), "hero_special_attack", "hero_idle", SubResource( 15 ), "hero_idle", "hero_move", SubResource( 16 ), "hero_move", "hero_idle", SubResource( 17 ), "hero_idle", "hero_dead", SubResource( 18 ) ]
+start_node = "hero_idle"
+graph_offset = Vector2( 0, 225.948 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
@@ -148,7 +150,7 @@ position = Vector2( 216, 135 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 6
-frame = 46
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 107, 115 )
