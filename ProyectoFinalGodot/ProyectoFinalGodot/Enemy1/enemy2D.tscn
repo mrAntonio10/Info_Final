@@ -17,6 +17,7 @@ height = 14.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 488, 175 )
+scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 4 )
 
 [node name="Enemy1" parent="." instance=ExtResource( 1 )]

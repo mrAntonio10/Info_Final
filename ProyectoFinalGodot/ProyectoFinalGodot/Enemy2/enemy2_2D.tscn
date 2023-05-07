@@ -34,11 +34,12 @@ height = 32.0
 
 [node name="enemy2_2D" type="KinematicBody2D"]
 position = Vector2( 219, 202 )
+scale = Vector2( 0.6, 0.6 )
 collision_layer = 2
 script = ExtResource( 4 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 0.8, 0.8 )
 frame = 29
 
 [node name="AnimationPlayer" parent="Enemy2" index="0"]
@@ -72,35 +73,35 @@ autostart = true
 
 [node name="izq" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 92, 0 )
+cast_to = Vector2( 33.75, 0 )
 
 [node name="der" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( -90, 0 )
+cast_to = Vector2( -46.25, 0 )
 
 [node name="arriba" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, -90 )
+cast_to = Vector2( 1.25, -42.5 )
 
 [node name="abajo" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, 90 )
+cast_to = Vector2( -1.25, 42.5 )
 
 [node name="a_i" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( -70, -80 )
+cast_to = Vector2( -33.75, -33.75 )
 
 [node name="a_d" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 70, -80 )
+cast_to = Vector2( 23.75, -36.25 )
 
 [node name="ab_i" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( -50, 80 )
+cast_to = Vector2( -26.25, 46.25 )
 
 [node name="ab_d" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 50, 80 )
+cast_to = Vector2( 25, 37.5 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

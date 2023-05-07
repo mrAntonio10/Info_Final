@@ -1,7 +1,9 @@
 extends Node2D
 
 const Player = preload("res://Node2D/Node2D.tscn")
-const Exit = preload("res://Node2D/Node2D.tscn")
+const Enemy = preload("res://Enemy2/enemy2_2D.tscn")
+const Enemy2 = preload("res://Enemy1/enemy2D.tscn")
+const Exit = preload("res://ExitDoor.tscn")
 
 var borders = Rect2(1, 1, 38, 21)
 
@@ -18,6 +20,14 @@ func generate_level():
 	var player = Player.instance()
 	add_child(player)
 	player.position = map.front()*32
+	
+	var enemy = Enemy.instance()
+	add_child(enemy)
+	enemy.position = map.front()*33
+	
+	var enemy2 = Enemy.instance()
+	add_child(enemy2)
+	enemy2.position = map.front()*24
 	
 	var exit = Exit.instance()
 	add_child(exit)

@@ -71,7 +71,7 @@ func _on_Timer_timeout():
 	target_position = Vector2(rand_range(0, move_range), rand_range(0, move_range))
 	state_machine.travel("enemy1_mover")
 	# definir una duracion aleatoria entre 10 y 20 segundos
-	var duration = rand_range(10, 20)
+	var duration = rand_range(5, 8)
 	#print("esperando ", duration, " segundos")
 	# iniciar el timer con esa duracion
 	timer.start(duration)

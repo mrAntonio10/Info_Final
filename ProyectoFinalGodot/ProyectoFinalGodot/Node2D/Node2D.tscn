@@ -143,12 +143,13 @@ graph_offset = Vector2( 335.5, 189.449 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 337, 165 )
-scale = Vector2( 3, 3 )
+position = Vector2( -29, -15 )
+scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 position = Vector2( 28.2, 21.4 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 6
@@ -156,6 +157,7 @@ frame = 47
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 32.8, 24 )
+scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -170,3 +172,7 @@ tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 20 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.2, 0.2 )
