@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemy1/Enemy1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Boxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Boxes/Hitbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy1/enemy2D.gd" type="Script" id=4]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 7.0
+height = 14.0
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="Enemy1" parent="." instance=ExtResource( 1 )]
+frame = 2
+
+[node name="AnimationTree" parent="Enemy1" index="1"]
+parameters/playback = SubResource( 1 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 3, 3 )
+shape = SubResource( 2 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -20, 7 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 20 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Enemy1"]
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
