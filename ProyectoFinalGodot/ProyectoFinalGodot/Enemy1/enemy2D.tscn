@@ -21,19 +21,23 @@ scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 4 )
 
 [node name="Enemy1" parent="." instance=ExtResource( 1 )]
-frame = 2
+frame = 1
 
 [node name="AnimationTree" parent="Enemy1" index="1"]
 active = true
 parameters/playback = SubResource( 1 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 16
+collision_mask = 12
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 3, 3 )
 shape = SubResource( 2 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 4
+collision_mask = 18
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( -20, 7 )

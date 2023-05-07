@@ -1,11 +1,28 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://sprites/hero.png" type="Texture" id=2]
+[ext_resource path="res://Boxes/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Boxes/Hitbox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.0
 height = 0.0
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "hero_attack"
@@ -21,6 +38,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.101, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -140,6 +169,11 @@ graph_offset = Vector2( 335.5, 189.449 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
+[sub_resource type="CircleShape2D" id=21]
+radius = 13.0504
+
+[sub_resource type="CapsuleShape2D" id=22]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
@@ -153,7 +187,7 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 hframes = 11
 vframes = 6
-frame = 47
+frame = 46
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 32.8, 24 )
@@ -161,6 +195,7 @@ scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/RESET = SubResource( 23 )
 anims/hero_attack = SubResource( 3 )
 anims/hero_dead = SubResource( 4 )
 anims/hero_idle = SubResource( 2 )
@@ -176,3 +211,26 @@ parameters/playback = SubResource( 20 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.2, 0.2 )
+
+[node name="Hitbox" parent="Player" instance=ExtResource( 4 )]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Player/Hitbox" index="0"]
+position = Vector2( 61.25, 30 )
+shape = SubResource( 21 )
+disabled = true
+
+[node name="Hurtbox" parent="Player" instance=ExtResource( 3 )]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Player/Hurtbox" index="0"]
+position = Vector2( 36.25, 22.5 )
+shape = SubResource( 22 )
+
+[connection signal="area_entered" from="Player/Hurtbox" to="Player" method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Player/Hurtbox" to="Player" method="_on_Hurtbox_body_entered"]
+
+[editable path="Player/Hitbox"]
+[editable path="Player/Hurtbox"]

@@ -69,3 +69,15 @@ func movimiento():
 	
 	
 	
+
+
+func take_damage():
+	health -= 1
+	print("health: ", health)
+	
+
+
+func _on_Hurtbox_area_entered(area):
+	take_damage()
+	print(area.collision_layer,"-",area.collision_mask)
+

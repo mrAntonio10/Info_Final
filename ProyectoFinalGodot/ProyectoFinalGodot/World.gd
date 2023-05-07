@@ -24,10 +24,14 @@ func generate_level():
 	var enemy = Enemy.instance()
 	add_child(enemy)
 	enemy.position = map.front()*33
-	
+
 	var enemy2 = Enemy.instance()
 	add_child(enemy2)
-	enemy2.position = map.front()*24
+	enemy2.position = map.front()*30
+	
+	var enemy3 = Enemy.instance()
+	add_child(enemy3)
+	enemy3.position = map.front()*44
 	
 	var exit = Exit.instance()
 	add_child(exit)

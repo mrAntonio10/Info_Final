@@ -12,8 +12,18 @@ var speed = 60
 var accel = 130
 var velocity = Vector2.ZERO
 
+var health = 5
+
 # se invoca en cada frame
 func _physics_process(delta):
+	
+	
+		#morir
+	if health <= 0:
+		state_machine.travel("enemy2_morir")
+		velocity = Vector2.ZERO
+	
+	
 	if $izq.is_colliding():
 		$Enemy1.flip_h = true
 		
@@ -75,3 +85,14 @@ func _on_Timer_timeout():
 	#print("esperando ", duration, " segundos")
 	# iniciar el timer con esa duracion
 	timer.start(duration)
+
+
+func take_damage():
+	health -= 1
+	print("health: ", health)
+	
+
+
+func _on_Hurtbox_area_entered(area):
+	take_damage()
+	print(area.collision_layer,"-",area.collision_mask)
