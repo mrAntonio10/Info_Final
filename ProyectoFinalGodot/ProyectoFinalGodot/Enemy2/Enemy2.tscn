@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprites/enemi2.png" type="Texture" id=1]
 
@@ -66,7 +66,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "enemy2_morir"
 length = 0.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -80,14 +79,59 @@ tracks/0/keys = {
 "values": [ 9, 10, 11, 12, 13, 14, 15 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "enemy2_ataque"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "enemy2_correr"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "enemy2_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "enemy2_morir"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=14]
+states/enemy2_ataque/node = SubResource( 5 )
+states/enemy2_ataque/position = Vector2( 224, 112 )
+states/enemy2_correr/node = SubResource( 6 )
+states/enemy2_correr/position = Vector2( 734, 57 )
+states/enemy2_idle/node = SubResource( 7 )
+states/enemy2_idle/position = Vector2( 542, 139 )
+states/enemy2_morir/node = SubResource( 8 )
+states/enemy2_morir/position = Vector2( 774, 187 )
+transitions = [ "enemy2_idle", "enemy2_morir", SubResource( 9 ), "enemy2_idle", "enemy2_ataque", SubResource( 10 ), "enemy2_ataque", "enemy2_idle", SubResource( 11 ), "enemy2_idle", "enemy2_correr", SubResource( 12 ), "enemy2_correr", "enemy2_idle", SubResource( 13 ) ]
+start_node = "enemy2_idle"
+graph_offset = Vector2( 238.098, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
 [node name="Enemy2" type="Sprite"]
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 4
-frame = 26
+frame = 28
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/enemy2_ataque = SubResource( 1 )
 anims/enemy2_correr = SubResource( 2 )
 anims/enemy2_idle = SubResource( 3 )
 anims/enemy2_morir = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 15 )
